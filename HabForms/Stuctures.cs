@@ -33,6 +33,8 @@ namespace HabitsProject
     }
     struct HabProgress
     {
-
+        public int prog_numb;
+        public DateTime date;
+        public object[] hab;
     }
 }
