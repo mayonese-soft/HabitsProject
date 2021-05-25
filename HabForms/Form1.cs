@@ -71,10 +71,6 @@ namespace HabForms
             {
                 RegisterSaveData(loginBox.Text, passwordBox.Text);
             }
-            else
-            {
-                MessageBox.Show("Такой логин уже используется!");
-            }
         }
 
         private bool RegisterDataCheck(string login, string password)
@@ -94,6 +90,7 @@ namespace HabForms
                 {
                     if (user.login == login)
                     {
+                        MessageBox.Show("Такой логин уже используется!");
                         return false;
                     }
                 }
@@ -107,9 +104,10 @@ namespace HabForms
         }
         private void RegisterSaveData(string login, string password)
         {
+            List<Users> userList = new List<Users>();
             try
             {
-                using (StreamWriter sw = new StreamWriter("userData.csv"))
+                using (StreamWriter sw = new StreamWriter("userData.csv", true))
                 {
                     sw.WriteLine(login + ";" + Hashing.Hash(password) + ";0;");
                 }
