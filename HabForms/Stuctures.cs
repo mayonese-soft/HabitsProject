@@ -14,13 +14,15 @@ namespace HabForms
     struct Habits // структура для полезных и вредных привычек
     {
         public int hab_numb;
-        public string quastion;
-        public double answer;
+        public string name;
+        public string question;
+        public int answer;
         public bool isGood; // флаг для определения привычки
     }    
     struct DaylyHabits // структура для ежедвевных привычек
     {
         public int hab_numb;
+        public string name;
         public bool isDone;
     }
     [Serializable]
