@@ -31,11 +31,17 @@ namespace HabForms
         public string pass;
         public int score;
     }
+    struct UserHabs
+    {
+        public string login;
+        public List<Habits> good_bad_hab;
+        public List<DaylyHabits> d_hab;
+    }
     struct HabProgress
     {
         public int prog_numb;
         public DateTime date;
-        public object[] hab;        
+        public List<object> hab;        
     }
     
 }
