@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HabitsProject
+namespace HabForms
 {
     struct QuestInterf
     {
@@ -35,6 +35,7 @@ namespace HabitsProject
     {
         public int prog_numb;
         public DateTime date;
-        public object[] hab;
+        public object[] hab;        
     }
+    
 }
