@@ -22,7 +22,6 @@ namespace HabForms
     {
         public int hab_numb;
         public string name;
-        public bool isDone;
     }
     [Serializable]
     struct Users
@@ -42,7 +41,8 @@ namespace HabForms
     {
         public int prog_numb;
         public DateTime date;
-        public List<object> hab;        
+        public List<object> hab;
+        public object answer;
     }
     
 }
