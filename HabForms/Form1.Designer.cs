@@ -29,13 +29,56 @@ namespace HabForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.enterButton = new System.Windows.Forms.Button();
+            this.loginBox = new System.Windows.Forms.TextBox();
+            this.passwordBox = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // enterButton
+            // 
+            this.enterButton.Location = new System.Drawing.Point(62, 141);
+            this.enterButton.Name = "enterButton";
+            this.enterButton.Size = new System.Drawing.Size(75, 23);
+            this.enterButton.TabIndex = 0;
+            this.enterButton.Text = "Enter";
+            this.enterButton.UseVisualStyleBackColor = true;
+            this.enterButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // loginBox
+            // 
+            this.loginBox.Location = new System.Drawing.Point(50, 40);
+            this.loginBox.Name = "loginBox";
+            this.loginBox.Size = new System.Drawing.Size(100, 20);
+            this.loginBox.TabIndex = 1;
+            this.loginBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // passwordBox
+            // 
+            this.passwordBox.Location = new System.Drawing.Point(50, 95);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.Size = new System.Drawing.Size(100, 20);
+            this.passwordBox.TabIndex = 2;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(199, 212);
+            this.Controls.Add(this.passwordBox);
+            this.Controls.Add(this.loginBox);
+            this.Controls.Add(this.enterButton);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button enterButton;
+        private System.Windows.Forms.TextBox loginBox;
+        private System.Windows.Forms.TextBox passwordBox;
     }
 }
 

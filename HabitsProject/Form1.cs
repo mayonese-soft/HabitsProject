@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HabForms
+namespace HabitsProject
 {
     public partial class Form1 : Form
     {
@@ -24,9 +24,9 @@ namespace HabForms
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void enterButton_Click(object sender, EventArgs e)
         {
-            if (CheckUserData(loginBox.Text, passwordBox.Text))
+            if(CheckUserData(loginBox.Text, passwordBox.Text))
             {
                 MessageBox.Show("Yay!");
             }
@@ -39,34 +39,22 @@ namespace HabForms
         private bool CheckUserData(string login, string password)
         {
             List<User> userList = new List<User>();
-            try
+            using (StreamReader sr = new StreamReader("userData.csv"))
             {
-                using (StreamReader sr = new StreamReader("userData.csv"))
+                while (sr.EndOfStream != true)
                 {
-                    while (sr.EndOfStream != true)
-                    {
-                        string[] str = sr.ReadLine().Split(';');
-                        userList.Add(new User() { login = str[0], password = str[1] });
-                    }
+                    string[] str = sr.ReadLine().Split(';');
+                    userList.Add(new User() { login = str[0], password = str[1]});
                 }
             }
-            catch (FileNotFoundException)
+            foreach(User user in userList)
             {
-                MessageBox.Show("Ошибка считывания данных!");
-            }
-            foreach (User user in userList)
-            {
-                if (user.login == login && user.password == password)
+                if(user.login == login && user.password == password)
                 {
                     return true;
                 }
             }
             return false;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
