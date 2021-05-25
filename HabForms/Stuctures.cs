@@ -16,12 +16,12 @@ namespace HabitsProject
         public int hab_numb;
         public string quastion;
         public int answer;
-        public bool good_or_bad; // флаг для определения привычки
+        public bool isGood; // флаг для определения привычки
     }    
     struct DaylyHabits // структура для ежедвевных привычек
     {
         public int hab_numb;
-        public bool did_or_not;
+        public bool isDone;
     }
     struct Users
     {

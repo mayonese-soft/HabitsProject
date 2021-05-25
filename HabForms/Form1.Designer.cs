@@ -32,6 +32,7 @@ namespace HabForms
             this.enterButton = new System.Windows.Forms.Button();
             this.loginBox = new System.Windows.Forms.TextBox();
             this.passwordBox = new System.Windows.Forms.TextBox();
+            this.registerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // enterButton
@@ -50,7 +51,6 @@ namespace HabForms
             this.loginBox.Name = "loginBox";
             this.loginBox.Size = new System.Drawing.Size(100, 20);
             this.loginBox.TabIndex = 1;
-            this.loginBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // passwordBox
             // 
@@ -59,11 +59,22 @@ namespace HabForms
             this.passwordBox.Size = new System.Drawing.Size(100, 20);
             this.passwordBox.TabIndex = 2;
             // 
+            // registerButton
+            // 
+            this.registerButton.Location = new System.Drawing.Point(62, 177);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(75, 23);
+            this.registerButton.TabIndex = 3;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(199, 212);
+            this.Controls.Add(this.registerButton);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.loginBox);
             this.Controls.Add(this.enterButton);
@@ -79,6 +90,7 @@ namespace HabForms
         private System.Windows.Forms.Button enterButton;
         private System.Windows.Forms.TextBox loginBox;
         private System.Windows.Forms.TextBox passwordBox;
+        private System.Windows.Forms.Button registerButton;
     }
 }
 

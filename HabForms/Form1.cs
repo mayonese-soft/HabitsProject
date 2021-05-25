@@ -26,7 +26,7 @@ namespace HabForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (CheckUserData(loginBox.Text, passwordBox.Text))
+            if (LoginDataCheck(loginBox.Text, passwordBox.Text))
             {
                 MessageBox.Show("Yay!");
             }
@@ -36,7 +36,7 @@ namespace HabForms
             }
         }
 
-        private bool CheckUserData(string login, string password)
+        private bool LoginDataCheck(string login, string password)
         {
             List<User> userList = new List<User>();
             try
@@ -64,9 +64,60 @@ namespace HabForms
             return false;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
+            if (RegisterDataCheck(loginBox.Text, passwordBox.Text))
+            {
+                RegisterSaveData(loginBox.Text, passwordBox.Text);
+            }
+            else
+            {
+                MessageBox.Show("Такой логин уже используется!");
+            }
+        }
 
+        private bool RegisterDataCheck(string login, string password)
+        {
+            List<User> userList = new List<User>();
+            try
+            {
+                using (StreamReader sr = new StreamReader("userData.csv"))
+                {
+                    while (sr.EndOfStream != true)
+                    {
+                        string[] str = sr.ReadLine().Split(';');
+                        userList.Add(new User() { login = str[0], password = str[1] });
+                    }
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("Ошибка считывания данных!");
+            }
+            foreach (User user in userList)
+            {
+                if (user.login == login)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private void RegisterSaveData(string login, string password)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter("userData.csv"))
+                {
+                    sw.WriteLine(login + ";" + password + ";");
+                }
+                MessageBox.Show("Успешная регистрация!");
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка сохранения данных.");
+            }
         }
     }
 }
