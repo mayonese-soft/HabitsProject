@@ -31,10 +31,6 @@ namespace HabForms
             {
                 MessageBox.Show("Yay!");
             }
-            else
-            {
-                MessageBox.Show("Данные неверны!");
-            }
         }
 
         private bool LoginDataCheck(string login, string password)
@@ -62,6 +58,7 @@ namespace HabForms
                     return true;
                 }
             }
+            MessageBox.Show("Данные неверны!");
             return false;
         }
 
@@ -70,10 +67,6 @@ namespace HabForms
             if (RegisterDataCheck(loginBox.Text, passwordBox.Text))
             {
                 RegisterSaveData(loginBox.Text, passwordBox.Text);
-            }
-            else
-            {
-                MessageBox.Show("Такой логин уже используется!");
             }
         }
 
@@ -94,6 +87,7 @@ namespace HabForms
                 {
                     if (user.login == login)
                     {
+                        MessageBox.Show("Такой логин уже используется!");
                         return false;
                     }
                 }
@@ -107,9 +101,10 @@ namespace HabForms
         }
         private void RegisterSaveData(string login, string password)
         {
+            List<Users> userList = new List<Users>();
             try
             {
-                using (StreamWriter sw = new StreamWriter("userData.csv"))
+                using (StreamWriter sw = new StreamWriter("userData.csv", true))
                 {
                     sw.WriteLine(login + ";" + Hashing.Hash(password) + ";0;");
                 }
