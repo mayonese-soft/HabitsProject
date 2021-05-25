@@ -17,15 +17,13 @@ namespace HabForms
         {
             InitializeComponent();
             string[] activities;
+            List<Habits> habits = new List<Habits>();
             using (StreamReader sr = new StreamReader("userData.csv"))
             {
-                List<Habits> habits = new List<Habits>();
-                int i = 0; 
                 while (sr.EndOfStream != true)
                 {
                     string[] str = sr.ReadLine().Split(';');
-                    activities[i] = habits.
-                    //userList.Add(new Users() { login = str[0], pass = str[1], score = Convert.ToInt32(str[2]) });
+                    habits.Add(new Habits() { hab_numb = Convert.ToInt32(str[0]), name = str[1], question = str[2], isGood = Convert.ToBoolean(str[3])});
                 }
             }
         }

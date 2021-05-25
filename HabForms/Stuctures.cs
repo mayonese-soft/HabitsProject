@@ -16,7 +16,6 @@ namespace HabForms
         public int hab_numb;
         public string name;
         public string question;
-        public int answer;
         public bool isGood; // флаг для определения привычки
     }    
     struct DaylyHabits // структура для ежедвевных привычек
