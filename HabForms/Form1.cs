@@ -29,7 +29,9 @@ namespace HabForms
         {
             if (LoginDataCheck(loginBox.Text, passwordBox.Text))
             {
-                MessageBox.Show("Yay!");
+                MainMenu mainMenu = new MainMenu();
+                Hide();
+                mainMenu.Show();
             }
         }
 
