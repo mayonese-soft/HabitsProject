@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace HabitsProject
 {
+    struct QuestInterf
+    {
+        public string text;
+        public int answ;
+    }
     struct Habits // структура для полезных и вредных привычек
     {
         public int hab_numb;
