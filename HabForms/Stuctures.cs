@@ -23,12 +23,12 @@ namespace HabForms
         public int hab_numb;
         public bool isDone;
     }
+    [Serializable]
     struct Users
     {
-        public int user_numb;
         public string login;
-        public byte[] pass;
-        public object[] habs;
+        //public byte[] pass;
+        public string pass;
         public int score;
     }
     struct HabProgress

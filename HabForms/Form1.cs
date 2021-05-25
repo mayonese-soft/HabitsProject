@@ -14,11 +14,11 @@ namespace HabForms
 {
     public partial class Form1 : Form
     {
-        struct User
-        {
-            public string login;
-            public string password;
-        }
+        //struct User
+        //{
+        //    public string login;
+        //    public string password;
+        //}
 
         public Form1()
         {
@@ -39,7 +39,7 @@ namespace HabForms
 
         private bool LoginDataCheck(string login, string password)
         {
-            List<User> userList = new List<User>();
+            List<Users> userList = new List<Users>();
             try
             {
                 using (StreamReader sr = new StreamReader("userData.csv"))
@@ -47,7 +47,7 @@ namespace HabForms
                     while (sr.EndOfStream != true)
                     {
                         string[] str = sr.ReadLine().Split(';');
-                        userList.Add(new User() { login = str[0], password = str[1] });
+                        userList.Add(new Users() { login = str[0], pass = str[1], score = Convert.ToInt32(str[2]) });
                     }
                 }
             }
@@ -55,9 +55,9 @@ namespace HabForms
             {
                 MessageBox.Show("Ошибка считывания данных!");
             }
-            foreach (User user in userList)
+            foreach (Users user in userList)
             {
-                if (user.login == login && user.password == password)
+                if (user.login == login && user.pass == Hashing.Hash(password))
                 {
                     return true;
                 }
@@ -79,7 +79,7 @@ namespace HabForms
 
         private bool RegisterDataCheck(string login, string password)
         {
-            List<User> userList = new List<User>();
+            List<Users> userList = new List<Users>();
             try
             {
                 using (StreamReader sr = new StreamReader("userData.csv"))
@@ -87,31 +87,31 @@ namespace HabForms
                     while (sr.EndOfStream != true)
                     {
                         string[] str = sr.ReadLine().Split(';');
-                        userList.Add(new User() { login = str[0], password = str[1] });
+                        userList.Add(new Users() { login = str[0], pass = str[1], score = Convert.ToInt32(str[2]) });
                     }
                 }
+                foreach (Users user in userList)
+                {
+                    if (user.login == login)
+                    {
+                        return false;
+                    }
+                }
+                return true;
             }
             catch (FileNotFoundException)
             {
                 MessageBox.Show("Ошибка считывания данных!");
-            }
-            foreach (User user in userList)
-            {
-                if (user.login == login)
-                {
-                    return false;
-                }
-            }
-            return true;
+                return false;
+            }            
         }
-
         private void RegisterSaveData(string login, string password)
         {
             try
             {
                 using (StreamWriter sw = new StreamWriter("userData.csv"))
                 {
-                    sw.WriteLine(login + ";" + password + ";");
+                    sw.WriteLine(login + ";" + Hashing.Hash(password) + ";0;");
                 }
                 MessageBox.Show("Успешная регистрация!");
             }
