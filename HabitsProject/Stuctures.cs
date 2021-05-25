@@ -17,4 +17,11 @@ namespace HabitsProject
         int hab_numb;
         bool did_or_not;
     }
+    struct Users
+    {
+        int user_numb;
+        string login;
+        byte[] pass;
+        object[] habs;
+    }
 }
