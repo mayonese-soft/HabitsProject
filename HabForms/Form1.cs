@@ -31,10 +31,6 @@ namespace HabForms
             {
                 MessageBox.Show("Yay!");
             }
-            else
-            {
-                MessageBox.Show("Данные неверны!");
-            }
         }
 
         private bool LoginDataCheck(string login, string password)
@@ -62,6 +58,7 @@ namespace HabForms
                     return true;
                 }
             }
+            MessageBox.Show("Данные неверны!");
             return false;
         }
 
