@@ -11,18 +11,6 @@ namespace HabForms
         public string text;
         public int answ;
     }
-    struct Habits // структура для полезных и вредных привычек
-    {
-        public int hab_numb;
-        public string name;
-        public string question;
-        public bool isGood; // флаг для определения привычки
-    }    
-    struct DaylyHabits // структура для ежедвевных привычек
-    {
-        public int hab_numb;
-        public string name;
-    }
     [Serializable]
     struct Users
     {
@@ -34,15 +22,5 @@ namespace HabForms
     struct UserHabs
     {
         public string login;
-        public List<Habits> good_bad_hab;
-        public List<DaylyHabits> d_hab;
     }
-    struct HabProgress
-    {
-        public int prog_numb;
-        public DateTime date;
-        public List<object> hab;
-        public object answer;
-    }
-    
 }

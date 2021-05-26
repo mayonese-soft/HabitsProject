@@ -19,7 +19,7 @@ namespace HabForms
         //    public string login;
         //    public string password;
         //}
-        string local_user_path;
+        public static string local_user_path;
 
         public Form1()
         {
@@ -30,6 +30,7 @@ namespace HabForms
         {
             if (LoginDataCheck(loginBox.Text, passwordBox.Text))
             {
+                FindDirectoryAndFile(loginBox.Text + "/Data.csv");
                 MainMenu mainMenu = new MainMenu();
                 Hide();
                 mainMenu.Show();
@@ -111,12 +112,24 @@ namespace HabForms
                 {
                     sw.WriteLine(login + ";" + Hashing.Hash(password) + ";0;");
                 }
-                local_user_path = login + "Data.csv";                
+                //local_user_path = login + "Data.csv";                
                 MessageBox.Show("Успешная регистрация!");
             }
             catch
             {
                 MessageBox.Show("Ошибка сохранения данных.");
+            }
+        }
+        private void FindDirectoryAndFile(string path)
+        {
+            if(File.Exists(path))
+            {
+                local_user_path = path;
+            }
+            else
+            {
+                Directory.CreateDirectory(loginBox.Text);
+                File.Create(path);
             }
         }
 
