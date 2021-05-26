@@ -46,6 +46,7 @@ namespace HabForms
             this.ChooseActivities.TabIndex = 0;
             this.ChooseActivities.Text = "Изменить отслеживаемые активности";
             this.ChooseActivities.UseVisualStyleBackColor = true;
+            this.ChooseActivities.Click += new System.EventHandler(this.ChooseActivities_Click);
             // 
             // StatsButton
             // 
