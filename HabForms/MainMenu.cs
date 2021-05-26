@@ -12,9 +12,12 @@ namespace HabForms
 {
     public partial class MainMenu : Form
     {
+        public static MainMenu instance;
+
         public MainMenu()
         {
             InitializeComponent();
+            instance = this;
         }
 
         private void exitButton_Click(object sender, EventArgs e)

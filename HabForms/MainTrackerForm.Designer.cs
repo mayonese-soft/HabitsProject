@@ -100,6 +100,7 @@ namespace HabForms
             this.Controls.Add(this.ChooseActivities);
             this.Name = "MainTrackerForm";
             this.Text = "MainTrackerForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainTrackerForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

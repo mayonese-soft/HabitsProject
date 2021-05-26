@@ -17,6 +17,11 @@ namespace HabForms
             InitializeComponent();
         }
 
+        private void MainTrackerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MainMenu.instance.Show();
+        }
+
         private void ChooseActivities_Click(object sender, EventArgs e)
         {
             TrackerForm cTracker = new TrackerForm();
