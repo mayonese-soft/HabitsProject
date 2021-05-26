@@ -14,8 +14,18 @@ namespace HabForms
     {
         string local_user_path;
         public MainMenu(string localPath)
+        public static MainMenu instance;
+
+        public MainMenu()
         {
             InitializeComponent();
+            FormClosing += MainMenu_FormClosing;
+            instance = this;
+        }
+
+        private void MainMenu_FormClosing(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
             local_user_path = localPath;
         }
 

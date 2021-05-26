@@ -119,5 +119,10 @@ namespace HabForms
                 MessageBox.Show("Ошибка сохранения данных.");
             }
         }
+
+        private void labelPassword_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
