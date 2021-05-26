@@ -40,7 +40,7 @@ namespace HabForms
             List<Users> userList = new List<Users>();
             try
             {
-                using (StreamReader sr = new StreamReader("userData.csv"))
+                using (StreamReader sr = new StreamReader("userData.csv", Encoding.UTF8, true))
                 {
                     while (sr.EndOfStream != true)
                     {
@@ -77,7 +77,7 @@ namespace HabForms
             List<Users> userList = new List<Users>();
             try
             {
-                using (StreamReader sr = new StreamReader("userData.csv"))
+                using (StreamReader sr = new StreamReader("userData.csv", Encoding.UTF8, true))
                 {
                     while (sr.EndOfStream != true)
                     {
