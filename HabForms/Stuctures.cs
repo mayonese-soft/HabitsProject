@@ -18,8 +18,4 @@ namespace HabForms
         //public byte[] pass;
         public string pass;
     }
-    struct UserHabs
-    {
-        public string login;
-    }
 }
