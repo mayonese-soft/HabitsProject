@@ -17,7 +17,13 @@ namespace HabForms
         public MainMenu()
         {
             InitializeComponent();
+            FormClosing += MainMenu_FormClosing;
             instance = this;
+        }
+
+        private void MainMenu_FormClosing(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
 
         private void exitButton_Click(object sender, EventArgs e)
