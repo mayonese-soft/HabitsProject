@@ -12,9 +12,11 @@ namespace HabForms
 {
     public partial class MainMenu : Form
     {
-        public MainMenu()
+        string local_user_path;
+        public MainMenu(string localPath)
         {
             InitializeComponent();
+            local_user_path = localPath;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -24,7 +26,7 @@ namespace HabForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainTrackerForm mainTracker = new MainTrackerForm();
+            MainTrackerForm mainTracker = new MainTrackerForm(local_user_path);
             Hide();
             mainTracker.Show();
         }

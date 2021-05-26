@@ -30,22 +30,44 @@ namespace HabForms
         private void InitializeComponent()
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.moveItems = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(29, 36);
+            this.listBox1.Location = new System.Drawing.Point(103, 75);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Size = new System.Drawing.Size(199, 290);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(447, 75);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(196, 290);
+            this.listBox2.TabIndex = 1;
+            // 
+            // moveItems
+            // 
+            this.moveItems.Location = new System.Drawing.Point(336, 201);
+            this.moveItems.Name = "moveItems";
+            this.moveItems.Size = new System.Drawing.Size(75, 23);
+            this.moveItems.TabIndex = 2;
+            this.moveItems.Text = "Перенести";
+            this.moveItems.UseVisualStyleBackColor = true;
+            this.moveItems.Click += new System.EventHandler(this.moveItems_Click);
             // 
             // TrackerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.moveItems);
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
             this.Name = "TrackerForm";
             this.Text = "TrackerForm";
@@ -56,5 +78,7 @@ namespace HabForms
         #endregion
 
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button moveItems;
     }
 }

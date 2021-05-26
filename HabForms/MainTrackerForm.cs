@@ -12,14 +12,16 @@ namespace HabForms
 {
     public partial class MainTrackerForm : Form
     {
-        public MainTrackerForm()
+        string local_user_path;
+        public MainTrackerForm(string localPath)
         {
             InitializeComponent();
+            local_user_path = localPath;
         }
 
         private void ChooseActivities_Click(object sender, EventArgs e)
         {
-            TrackerForm cTracker = new TrackerForm();
+            TrackerForm cTracker = new TrackerForm(local_user_path);
             cTracker.ShowDialog();
         }
     }

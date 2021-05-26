@@ -14,12 +14,14 @@ namespace HabForms
     public partial class TrackerForm : Form
     {
         List<Habits> habits = new List<Habits>();
+        string local_user_path;
 
-        public TrackerForm()
+        public TrackerForm(string localPath)
         {
             InitializeComponent();
             LoadHabitList();
             LoadActivities();
+            local_user_path = localPath;
         }
 
         private void LoadHabitList()
@@ -47,6 +49,11 @@ namespace HabForms
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void moveItems_Click(object sender, EventArgs e)
         {
 
         }

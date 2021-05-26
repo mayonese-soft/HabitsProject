@@ -19,6 +19,7 @@ namespace HabForms
         //    public string login;
         //    public string password;
         //}
+        string local_user_path;
 
         public Form1()
         {
@@ -29,7 +30,7 @@ namespace HabForms
         {
             if (LoginDataCheck(loginBox.Text, passwordBox.Text))
             {
-                MainMenu mainMenu = new MainMenu();
+                MainMenu mainMenu = new MainMenu(local_user_path);
                 Hide();
                 mainMenu.Show();
             }
@@ -110,6 +111,7 @@ namespace HabForms
                 {
                     sw.WriteLine(login + ";" + Hashing.Hash(password) + ";0;");
                 }
+                local_user_path = login + "Data.csv";                
                 MessageBox.Show("Успешная регистрация!");
             }
             catch
