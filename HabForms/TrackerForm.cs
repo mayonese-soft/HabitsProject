@@ -14,14 +14,12 @@ namespace HabForms
     public partial class TrackerForm : Form
     {
         List<Habits> habits = new List<Habits>();
-        string local_user_path;
 
-        public TrackerForm(string localPath)
+        public TrackerForm()
         {
             InitializeComponent();
             LoadHabitList();
             LoadActivities();
-            local_user_path = localPath;
         }
 
         private void LoadHabitList()

@@ -30,7 +30,7 @@ namespace HabForms
         {
             if (LoginDataCheck(loginBox.Text, passwordBox.Text))
             {
-                MainMenu mainMenu = new MainMenu(local_user_path);
+                MainMenu mainMenu = new MainMenu();
                 Hide();
                 mainMenu.Show();
             }
