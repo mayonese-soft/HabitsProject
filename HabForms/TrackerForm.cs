@@ -24,7 +24,7 @@ namespace HabForms
 
         private void LoadHabitList()
         {
-            using (StreamReader sr = new StreamReader("habitData.csv"))
+            using (StreamReader sr = new StreamReader("habitData.csv", Encoding.UTF8, true))
             {
                 while (sr.EndOfStream != true)
                 {
@@ -41,13 +41,9 @@ namespace HabForms
             foreach (Habits habit in habits)
             {
                 activities[i] = habit.name;
+                i++;
             }
-            var source = new AutoCompleteStringCollection();
-            source.AddRange(activities);
-            foreach (object obj in source)
-            {
-                listBox1.Items.Add(obj);
-            } 
+            listBox1.Items.AddRange(activities);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
