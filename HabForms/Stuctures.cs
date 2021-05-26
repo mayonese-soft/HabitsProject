@@ -17,7 +17,6 @@ namespace HabForms
         public string login;
         //public byte[] pass;
         public string pass;
-        public int score;
     }
     struct UserHabs
     {

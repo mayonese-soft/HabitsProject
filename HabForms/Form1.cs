@@ -47,7 +47,7 @@ namespace HabForms
                     while (sr.EndOfStream != true)
                     {
                         string[] str = sr.ReadLine().Split(';');
-                        userList.Add(new Users() { login = str[0], pass = str[1], score = Convert.ToInt32(str[2]) });
+                        userList.Add(new Users() { login = str[0], pass = str[1]});
                     }
                 }
             }
@@ -84,7 +84,7 @@ namespace HabForms
                     while (sr.EndOfStream != true)
                     {
                         string[] str = sr.ReadLine().Split(';');
-                        userList.Add(new Users() { login = str[0], pass = str[1], score = Convert.ToInt32(str[2]) });
+                        userList.Add(new Users() { login = str[0], pass = str[1] });
                     }
                 }
                 foreach (Users user in userList)
