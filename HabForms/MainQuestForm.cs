@@ -121,6 +121,11 @@ namespace HabForms
         {
             UpdatePage(curPage.tLink);
         }
+
+        private void mainTextLable_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 
