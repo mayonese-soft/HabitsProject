@@ -33,9 +33,9 @@ namespace HabForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainTrackerForm mainTracker = new MainTrackerForm();
-            Hide();
-            mainTracker.Show();
+            //MainTrackerForm mainTracker = new MainTrackerForm();
+            //Hide();
+            //mainTracker.Show();
         }
     }
 }

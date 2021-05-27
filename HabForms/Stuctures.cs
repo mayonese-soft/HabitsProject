@@ -24,6 +24,11 @@ namespace HabForms
     {
         public string pageID;
         public string mainText;
-        public SortedList answers;
+        public string fVar;
+        public string sVar;
+        public string tVar;
+        public string fLink;
+        public string sLink;
+        public string tLink;
     }
 }
