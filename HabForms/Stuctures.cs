@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,6 @@ namespace HabForms
     {
         public string pageID;
         public string mainText;
-        public string fAnswer;
-        public string sAnswer;
-        public string tAnswer;
-        public string fLink;
-        public string sLink;
-        public string tLink;
+        public SortedList fAnswer;
     }
 }
