@@ -27,7 +27,7 @@ namespace HabForms
         private void ReadingPage()
         {
             string tempID = "", tempMainText = "", tempFVar = "", tempSVar = "", tempTVar = "", tempFLink = "", tempSLink = "", tempTLink = "";
-            var lines = File.ReadAllLines("qst1.txt");            
+            var lines = File.ReadAllLines(@"../../quest1.txt");            
             Regex text = new Regex("(?<=\\$[1-3]).*(?=\\&.*)");
             Regex linkr = new Regex("(?<=\\&).*");
             foreach (var line in lines)

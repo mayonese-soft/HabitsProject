@@ -107,12 +107,12 @@ namespace HabForms
         {
             List<Users> userList = new List<Users>();
             try
-            {
+            {                
                 using (StreamWriter sw = new StreamWriter("userData.csv", true))
                 {
                     sw.WriteLine(login + ";" + Hashing.Hash(password) + ";0;");
                 }
-                //local_user_path = login + "Data.csv";                
+                //local_user_path = login + "Data.csv";
                 MessageBox.Show("Успешная регистрация!");
             }
             catch
