@@ -27,7 +27,7 @@ namespace HabForms
         }
         private void ReadingPage()
         {
-            string tempID = "", tempMainText = "", tempFVar = "", tempSVar = "", tempTVar = "", tempFLink = "", tempSLink = "", tempTLink = "";
+            string tempID = "", tempImageLink = "", tempMainText = "", tempFVar = "", tempSVar = "", tempTVar = "", tempFLink = "", tempSLink = "", tempTLink = "";
             var lines = File.ReadAllLines(Path);            
             Regex text = new Regex("(?<=\\$[1-3]).*(?=\\&.*)");
             Regex linkr = new Regex("(?<=\\&).*");
@@ -35,8 +35,9 @@ namespace HabForms
             {
                 if (line == "@/")
                 {
-                    pages.Add(new Page { pageID = tempID, mainText = tempMainText, fVar = tempFVar, sVar = tempSVar, tVar = tempTVar, fLink = tempFLink, sLink = tempSLink, tLink = tempTLink });
+                    pages.Add(new Page { pageID = tempID, imageLink = tempImageLink, mainText = tempMainText, fVar = tempFVar, sVar = tempSVar, tVar = tempTVar, fLink = tempFLink, sLink = tempSLink, tLink = tempTLink });
                     tempID = "";
+                    tempImageLink = "";
                     tempMainText = "";
                     tempFVar = "";
                     tempSVar = "";
@@ -45,16 +46,13 @@ namespace HabForms
                     tempSLink = "";
                     tempTLink = "";
                 }
-                else if (line.StartsWith("@")) 
-                {                    
-                    tempID = line.Replace("@",string.Empty);
-                } 
-                else if (line.StartsWith("#")) tempMainText = line;
+                else if (line.StartsWith("@")) tempID = line.Replace("@", string.Empty);
+                else if (line.StartsWith("!")) tempImageLink = line.Replace("!", string.Empty);
+                else if (line.StartsWith("#")) tempMainText = line.Replace("#", string.Empty);
                 else if (line.StartsWith("$1"))
                 {
                     tempFVar = text.Match(line).ToString();
                     tempFLink = linkr.Match(line).ToString();
-                    //mainTextLable.Text = tempAnswers.GetKey(0).ToString() + tempAnswers.GetByIndex(0).ToString();
                 }
                 else if (line.StartsWith("$2"))
                 {
@@ -73,6 +71,14 @@ namespace HabForms
             var tempPage = pages.Find(x => x.pageID == link);
             UpdatePageData(tempPage);
             mainTextLable.Text = tempPage.mainText;
+            try
+            {
+                pictureBox1.Image = Image.FromFile(tempPage.imageLink);
+            }
+            catch
+            {
+                pictureBox1.Image = null;
+            }
             answerButton1.Text = tempPage.fVar;
             if (tempPage.sVar != "")
             {
@@ -94,10 +100,6 @@ namespace HabForms
             {
                 answerButton3.Hide();
             }
-            
-            //answerButton1.Text = tempPage.answers.GetKey(0).ToString();
-            //answerButton2.Text = tempPage.answers.GetKey(1).ToString();
-            //answerButton3.Text = tempPage.answers.GetKey(2).ToString();
         }
 
         private void UpdatePageData(Page newPage)

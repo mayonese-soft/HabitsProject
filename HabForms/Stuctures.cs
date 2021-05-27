@@ -23,6 +23,7 @@ namespace HabForms
     struct Page
     {
         public string pageID;
+        public string imageLink;
         public string mainText;
         public string fVar;
         public string sVar;

@@ -17,6 +17,7 @@ $1Ладно&1
 @/
 
 @4
+!E:\vsprojects\QuestRepos\HabForms\Quests\Quest1\BloodMoon.jpg
 #Кровавая луна поднимается
 $1Пойти защищать газон&1
 $2Воспользоваться магией&2
