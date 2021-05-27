@@ -37,5 +37,12 @@ namespace HabForms
             //Hide();
             //mainTracker.Show();
         }
+
+        private void questsButton_Click(object sender, EventArgs e)
+        {
+            StartQuestMenu startQuestMenu = new StartQuestMenu();
+            Hide();
+            startQuestMenu.Show();
+        }
     }
 }

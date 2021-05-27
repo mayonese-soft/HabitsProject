@@ -31,7 +31,6 @@ namespace HabForms
         {
             this.exitButton = new System.Windows.Forms.Button();
             this.questsButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // exitButton
@@ -46,29 +45,19 @@ namespace HabForms
             // 
             // questsButton
             // 
-            this.questsButton.Location = new System.Drawing.Point(86, 212);
+            this.questsButton.Location = new System.Drawing.Point(86, 125);
             this.questsButton.Name = "questsButton";
             this.questsButton.Size = new System.Drawing.Size(75, 23);
             this.questsButton.TabIndex = 1;
             this.questsButton.Text = "Quest";
             this.questsButton.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(86, 157);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Tracker";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.questsButton.Click += new System.EventHandler(this.questsButton_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(251, 311);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.questsButton);
             this.Controls.Add(this.exitButton);
             this.Name = "MainMenu";
@@ -81,6 +70,5 @@ namespace HabForms
 
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button questsButton;
-        private System.Windows.Forms.Button button1;
     }
 }
