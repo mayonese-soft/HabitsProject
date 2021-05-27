@@ -17,9 +17,10 @@ namespace HabForms
     {
         List<Page> pages = new List<Page>();
         Page curPage = new Page();
-        
-        public MainQuestForm()
+        string Path;
+        public MainQuestForm(string Path)
         {
+            this.Path = Path;
             InitializeComponent();
             ReadingPage();
             UpdatePage("1");
@@ -27,7 +28,7 @@ namespace HabForms
         private void ReadingPage()
         {
             string tempID = "", tempMainText = "", tempFVar = "", tempSVar = "", tempTVar = "", tempFLink = "", tempSLink = "", tempTLink = "";
-            var lines = File.ReadAllLines(@"../../quest1.txt");            
+            var lines = File.ReadAllLines(Path);            
             Regex text = new Regex("(?<=\\$[1-3]).*(?=\\&.*)");
             Regex linkr = new Regex("(?<=\\&).*");
             foreach (var line in lines)
