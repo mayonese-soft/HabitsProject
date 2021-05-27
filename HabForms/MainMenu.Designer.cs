@@ -39,7 +39,7 @@ namespace HabForms
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 0;
-            this.exitButton.Text = "Exit";
+            this.exitButton.Text = "Выход";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
@@ -49,7 +49,7 @@ namespace HabForms
             this.questsButton.Name = "questsButton";
             this.questsButton.Size = new System.Drawing.Size(75, 23);
             this.questsButton.TabIndex = 1;
-            this.questsButton.Text = "Quest";
+            this.questsButton.Text = "Квесты";
             this.questsButton.UseVisualStyleBackColor = true;
             this.questsButton.Click += new System.EventHandler(this.questsButton_Click);
             // 

@@ -53,6 +53,7 @@ namespace HabForms
             {
                 string path = @"../../Quests/" + listBox1.SelectedItem.ToString() + ".txt";
                 MainQuestForm m = new MainQuestForm(path);
+                Hide();
                 m.Show();
             }
         }

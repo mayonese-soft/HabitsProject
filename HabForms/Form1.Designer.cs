@@ -39,11 +39,11 @@ namespace HabForms
             // 
             // enterButton
             // 
-            this.enterButton.Location = new System.Drawing.Point(62, 141);
+            this.enterButton.Location = new System.Drawing.Point(50, 141);
             this.enterButton.Name = "enterButton";
-            this.enterButton.Size = new System.Drawing.Size(75, 23);
+            this.enterButton.Size = new System.Drawing.Size(100, 23);
             this.enterButton.TabIndex = 0;
-            this.enterButton.Text = "Enter";
+            this.enterButton.Text = "Вход";
             this.enterButton.UseVisualStyleBackColor = true;
             this.enterButton.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -64,11 +64,11 @@ namespace HabForms
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(62, 177);
+            this.registerButton.Location = new System.Drawing.Point(50, 177);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(75, 23);
+            this.registerButton.Size = new System.Drawing.Size(100, 23);
             this.registerButton.TabIndex = 3;
-            this.registerButton.Text = "Register";
+            this.registerButton.Text = "Регистрация";
             this.registerButton.UseVisualStyleBackColor = true;
             this.registerButton.Click += new System.EventHandler(this.button1_Click_1);
             // 

@@ -49,7 +49,7 @@ namespace HabForms
                 {                    
                     tempID = line.Replace("@",string.Empty);
                 } 
-                else if (line.StartsWith("#")) tempMainText = line;
+                else if (line.StartsWith("#")) tempMainText = line.Replace("#", string.Empty);
                 else if (line.StartsWith("$1"))
                 {
                     tempFVar = text.Match(line).ToString();
@@ -118,6 +118,11 @@ namespace HabForms
         private void answerButton3_Click(object sender, EventArgs e)
         {
             UpdatePage(curPage.tLink);
+        }
+
+        private void mainTextLable_Click(object sender, EventArgs e)
+        {
+
         }
     }
     
