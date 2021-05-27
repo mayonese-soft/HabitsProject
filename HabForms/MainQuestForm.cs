@@ -27,8 +27,9 @@ namespace HabForms
         private void ReadingPage()
         {
             string tempID = "", tempMainText = "", tempFVar = "", tempSVar = "", tempTVar = "", tempFLink = "", tempSLink = "", tempTLink = "";
-            var lines = File.ReadAllLines("qst1.txt");
-            Regex text = new Regex("((?!\\$)(?![1-3]).*)");
+            var lines = File.ReadAllLines("qst1.txt");            
+            Regex text = new Regex("/(?<=\\$[1-3]).*(?=\\&.*)/gm");
+            Regex linkr = new Regex("/(?<=\\&).*/gm");
             foreach (var line in lines)
             {
                 if (line == "@/")
@@ -44,29 +45,25 @@ namespace HabForms
                     tempTLink = "";
                 }
                 else if (line.StartsWith("@")) 
-                {
-                    
+                {                    
                     tempID = line.Replace("@",string.Empty);
                 } 
                 else if (line.StartsWith("#")) tempMainText = line;
                 else if (line.StartsWith("$1"))
                 {
-                    string temp = text.Match(line).ToString();
-                    tempFVar = temp.Split('&')[0];
-                    tempFLink = temp.Split('&')[1];
+                    tempFVar = text.Match(line).ToString();
+                    tempFLink = linkr.Match(line).ToString();
                     //mainTextLable.Text = tempAnswers.GetKey(0).ToString() + tempAnswers.GetByIndex(0).ToString();
                 }
                 else if (line.StartsWith("$2"))
                 {
-                    string temp = text.Match(line).ToString();
-                    tempSVar = temp.Split('&')[0];
-                    tempSLink = temp.Split('&')[1];
+                    tempSVar = text.Match(line).ToString();
+                    tempSLink = linkr.Match(line).ToString();
                 }
                 else if (line.StartsWith("$3"))
                 {
-                    string temp = text.Match(line).ToString();
-                    tempTVar = temp.Split('&')[0];
-                    tempTLink = temp.Split('&')[1];
+                    tempTVar = text.Match(line).ToString();
+                    tempTLink = linkr.Match(line).ToString();
                 }
             }
         }
