@@ -32,6 +32,7 @@ namespace HabForms
             this.exitButton = new System.Windows.Forms.Button();
             this.questsButton = new System.Windows.Forms.Button();
             this.settingsButton = new System.Windows.Forms.Button();
+            this.QuestEditor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // exitButton
@@ -46,7 +47,7 @@ namespace HabForms
             // 
             // questsButton
             // 
-            this.questsButton.Location = new System.Drawing.Point(86, 125);
+            this.questsButton.Location = new System.Drawing.Point(86, 83);
             this.questsButton.Name = "questsButton";
             this.questsButton.Size = new System.Drawing.Size(75, 23);
             this.questsButton.TabIndex = 1;
@@ -64,11 +65,22 @@ namespace HabForms
             this.settingsButton.UseVisualStyleBackColor = true;
             this.settingsButton.Click += new System.EventHandler(this.questsButton_Click);
             // 
+            // QuestEditor
+            // 
+            this.QuestEditor.Location = new System.Drawing.Point(86, 135);
+            this.QuestEditor.Name = "QuestEditor";
+            this.QuestEditor.Size = new System.Drawing.Size(75, 23);
+            this.QuestEditor.TabIndex = 2;
+            this.QuestEditor.Text = "Редактор";
+            this.QuestEditor.UseVisualStyleBackColor = true;
+            this.QuestEditor.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(251, 311);
+            this.Controls.Add(this.QuestEditor);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.questsButton);
             this.Controls.Add(this.exitButton);
@@ -83,5 +95,6 @@ namespace HabForms
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button questsButton;
         private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.Button QuestEditor;
     }
 }

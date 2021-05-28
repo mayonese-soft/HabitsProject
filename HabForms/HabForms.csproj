@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditorEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorEntry.Designer.cs">
+      <DependentUpon>EditorEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EdtiorQuestCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdtiorQuestCreation.Designer.cs">
+      <DependentUpon>EdtiorQuestCreation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +65,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="HashCode.cs" />
+    <Compile Include="MainEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainEditorForm.Designer.cs">
+      <DependentUpon>MainEditorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,8 +98,17 @@
       <DependentUpon>StartQuestMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Stuctures.cs" />
+    <EmbeddedResource Include="EditorEntry.resx">
+      <DependentUpon>EditorEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EdtiorQuestCreation.resx">
+      <DependentUpon>EdtiorQuestCreation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainEditorForm.resx">
+      <DependentUpon>MainEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
