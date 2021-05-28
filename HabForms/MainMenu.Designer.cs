@@ -31,6 +31,7 @@ namespace HabForms
         {
             this.exitButton = new System.Windows.Forms.Button();
             this.questsButton = new System.Windows.Forms.Button();
+            this.settingsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // exitButton
@@ -53,11 +54,22 @@ namespace HabForms
             this.questsButton.UseVisualStyleBackColor = true;
             this.questsButton.Click += new System.EventHandler(this.questsButton_Click);
             // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(86, 190);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(75, 23);
+            this.settingsButton.TabIndex = 1;
+            this.settingsButton.Text = "Настройки";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.questsButton_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(251, 311);
+            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.questsButton);
             this.Controls.Add(this.exitButton);
             this.Name = "MainMenu";
@@ -70,5 +82,6 @@ namespace HabForms
 
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button questsButton;
+        private System.Windows.Forms.Button settingsButton;
     }
 }
