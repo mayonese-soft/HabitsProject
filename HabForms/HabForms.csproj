@@ -146,7 +146,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="koridor.jpg" />
-    <Content Include="Quests\quest1.txt" />
+    <Content Include="Quests\quest\BloodMoon.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Quests\quest\quest1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
