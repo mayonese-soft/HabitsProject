@@ -131,7 +131,7 @@ namespace HabForms
             }
             else
             {
-                File.Create(path);
+                File.Create(path).Close();
                 AutoSave();
             }
         }
@@ -152,7 +152,7 @@ namespace HabForms
             }
             else
             {
-                File.Create(path);
+                File.Create(path).Close();
                 AutoSave();
             }
         }

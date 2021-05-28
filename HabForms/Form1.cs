@@ -123,14 +123,15 @@ namespace HabForms
             else
             {
                 CreateDirectory(path);
+                FindDirectoryAndFile(path);
             }
         }
 
         private void CreateDirectory(string path)
         {
-            Directory.CreateDirectory(loginBox.Text);
-            File.Create(path + "/Data.csv");
-            File.Create(path + "/Saves.csv");
+            Directory.CreateDirectory(path);
+            File.Create(path + "/Data.csv").Close();
+            File.Create(path + "/Saves.csv").Close();
         }
 
         private void labelPassword_Click(object sender, EventArgs e)
