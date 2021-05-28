@@ -29,7 +29,6 @@ namespace HabForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.closeButton = new System.Windows.Forms.Button();
             this.isAutosaveOn = new System.Windows.Forms.CheckBox();
             this.isTextWhite = new System.Windows.Forms.Button();
@@ -54,10 +53,11 @@ namespace HabForms
             this.isAutosaveOn.CheckState = System.Windows.Forms.CheckState.Checked;
             this.isAutosaveOn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.isAutosaveOn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.isAutosaveOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.isAutosaveOn.ForeColor = System.Drawing.Color.Black;
             this.isAutosaveOn.Location = new System.Drawing.Point(347, 176);
             this.isAutosaveOn.Name = "isAutosaveOn";
-            this.isAutosaveOn.Size = new System.Drawing.Size(160, 17);
+            this.isAutosaveOn.Size = new System.Drawing.Size(157, 17);
             this.isAutosaveOn.TabIndex = 1;
             this.isAutosaveOn.Text = "Включить автосохранения";
             this.isAutosaveOn.UseVisualStyleBackColor = false;
@@ -77,7 +77,7 @@ namespace HabForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::HabForms.Properties.Resources.koridor;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.isTextWhite);
@@ -85,6 +85,7 @@ namespace HabForms
             this.Controls.Add(this.closeButton);
             this.Name = "Settings";
             this.Text = "Настройки";
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

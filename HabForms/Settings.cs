@@ -18,7 +18,7 @@ namespace HabForms
         {
             InitializeComponent();
             CheckAutosaveIsOn();
-            isAutosaveOn.ForeColor = Color.Black;
+            BackgroundImage = Properties.Resources.koridor;
             FormClosing += Settings_OnClosing;
         }
 
@@ -45,7 +45,12 @@ namespace HabForms
 
         private void isTextWhite_Click(object sender, EventArgs e)
         {
-            isAutosaveOn.ForeColor = Color.White;
+            BackgroundImage = Properties.Resources.koridor_light;
+        }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

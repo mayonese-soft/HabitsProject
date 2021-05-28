@@ -124,6 +124,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -146,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="koridor.jpg" />
+    <EmbeddedResource Include="koridor_light.png" />
     <Content Include="Quests\quest\BloodMoon.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
