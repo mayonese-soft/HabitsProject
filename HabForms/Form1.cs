@@ -14,11 +14,6 @@ namespace HabForms
 {
     public partial class Form1 : Form
     {
-        //struct User
-        //{
-        //    public string login;
-        //    public string password;
-        //}
         public static string local_user_path;
 
         public Form1()
@@ -30,7 +25,7 @@ namespace HabForms
         {
             if (LoginDataCheck(loginBox.Text, passwordBox.Text))
             {
-                FindDirectoryAndFile(loginBox.Text + "/Data.csv");
+                FindDirectoryAndFile(loginBox.Text);
                 MainMenu mainMenu = new MainMenu();
                 Hide();
                 mainMenu.Show();
@@ -105,7 +100,6 @@ namespace HabForms
         }
         private void RegisterSaveData(string login, string password)
         {
-            List<Users> userList = new List<Users>();
             try
             {                
                 using (StreamWriter sw = new StreamWriter("userData.csv", true))
@@ -122,15 +116,21 @@ namespace HabForms
         }
         private void FindDirectoryAndFile(string path)
         {
-            if(File.Exists(path))
+            if(Directory.Exists(path))
             {
                 local_user_path = path;
             }
             else
             {
-                Directory.CreateDirectory(loginBox.Text);
-                File.Create(path);
+                CreateDirectory(path);
             }
+        }
+
+        private void CreateDirectory(string path)
+        {
+            Directory.CreateDirectory(loginBox.Text);
+            File.Create(path + "/Data.csv");
+            File.Create(path + "/Saves.csv");
         }
 
         private void labelPassword_Click(object sender, EventArgs e)

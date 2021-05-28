@@ -98,6 +98,7 @@ namespace HabForms
             this.loadButton.TabIndex = 5;
             this.loadButton.Text = "Загрузить";
             this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
             // newGameButton
             // 
@@ -116,6 +117,7 @@ namespace HabForms
             this.exitButton.TabIndex = 7;
             this.exitButton.Text = "Выход";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // MainQuestForm
             // 

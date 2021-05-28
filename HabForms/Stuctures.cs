@@ -16,7 +16,6 @@ namespace HabForms
     struct Users
     {
         public string login;
-        //public byte[] pass;
         public string pass;
     }
     [Serializable]
@@ -31,5 +30,11 @@ namespace HabForms
         public string fLink;
         public string sLink;
         public string tLink;
+    }
+    [Serializable]
+    struct Save
+    {
+        public string questName;
+        public string savedPage;
     }
 }

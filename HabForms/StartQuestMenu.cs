@@ -51,10 +51,10 @@ namespace HabForms
         {
             if (listBox1.SelectedItem != null)
             {
-                string path = @"../../Quests/" + listBox1.SelectedItem.ToString() + ".txt";
-                MainQuestForm m = new MainQuestForm(path);
-                Hide();
-                m.Show();
+                string questName = listBox1.SelectedItem.ToString();
+                string path = @"../../Quests/" + questName + ".txt";
+                MainQuestForm m = new MainQuestForm(path, questName);
+                m.ShowDialog();
             }
         }
     }

@@ -16,12 +16,16 @@ namespace HabForms
     public partial class MainQuestForm : Form
     {
         List<Page> pages = new List<Page>();
+        List<Save> saves = new List<Save>();
         Page curPage = new Page();
         string Path;
-        public MainQuestForm(string Path)
+        string QuestName;
+        public MainQuestForm(string Path, string QuestName)
         {
             this.Path = Path;
+            this.QuestName = QuestName;
             InitializeComponent();
+            FormClosing += MainQuestForm_OnClosing;
             ReadingPage();
             UpdatePage("1");
         }
@@ -101,6 +105,57 @@ namespace HabForms
                 answerButton3.Hide();
             }
         }
+        void AutoSave()
+        {
+            string path = Form1.local_user_path + "/Saves.csv";
+            if(File.Exists(path))
+            {
+                int i = 0;
+                var lines = File.ReadAllLines(path).ToList();
+                bool saveIsFound = false;
+                while(i < lines.Count)
+                {
+                    if (lines[i].StartsWith(QuestName)) 
+                    {
+                        lines[i] = QuestName + ";" + curPage.pageID;
+                        saveIsFound = true;
+                        break;
+                    }
+                    i++;
+                }
+                if(!saveIsFound)
+                {
+                    lines.Add(QuestName + ";" + curPage.pageID);
+                }
+                File.WriteAllLines(path, lines);
+            }
+            else
+            {
+                File.Create(path);
+                AutoSave();
+            }
+        }
+
+        void LoadGame()
+        {
+            string path = Form1.local_user_path + "/Saves.csv";
+            if (File.Exists(path))
+            {
+                var lines = File.ReadAllLines(path).ToList();
+                foreach(var line in lines)
+                {
+                    if (line.StartsWith(QuestName))
+                    {
+                        UpdatePage(line.Split(';')[1]);
+                    }
+                }
+            }
+            else
+            {
+                File.Create(path);
+                AutoSave();
+            }
+        }
 
         private void UpdatePageData(Page newPage)
         {
@@ -125,6 +180,21 @@ namespace HabForms
         private void mainTextLable_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            LoadGame();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void MainQuestForm_OnClosing(object sender, EventArgs e)
+        {
+            AutoSave();
         }
     }
     
