@@ -142,7 +142,7 @@ namespace HabForms
             if (File.Exists(path))
             {
                 var lines = File.ReadAllLines(path).ToList();
-                foreach(var line in lines)
+                foreach (var line in lines)
                 {
                     if (line.StartsWith(QuestName))
                     {
@@ -201,8 +201,20 @@ namespace HabForms
         {
             Save();
         }
+        private void newGameButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+            "Вы уверены, что хотите начать новую игру?",
+            "Новая игра",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1,
+            MessageBoxOptions.DefaultDesktopOnly);
+            if(result == DialogResult.Yes)
+            {
+                UpdatePage("1");
+                Save();
+            }
+        }
     }
-    
-
-    
 }

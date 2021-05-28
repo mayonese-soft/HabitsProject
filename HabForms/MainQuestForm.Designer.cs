@@ -109,6 +109,7 @@ namespace HabForms
             this.newGameButton.TabIndex = 6;
             this.newGameButton.Text = "Новая игра";
             this.newGameButton.UseVisualStyleBackColor = true;
+            this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
             // 
             // exitButton
             // 

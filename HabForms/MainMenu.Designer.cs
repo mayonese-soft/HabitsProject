@@ -63,7 +63,7 @@ namespace HabForms
             this.settingsButton.TabIndex = 1;
             this.settingsButton.Text = "Настройки";
             this.settingsButton.UseVisualStyleBackColor = true;
-            this.settingsButton.Click += new System.EventHandler(this.questsButton_Click);
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // QuestEditor
             // 
