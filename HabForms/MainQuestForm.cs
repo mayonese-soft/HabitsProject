@@ -105,7 +105,7 @@ namespace HabForms
                 answerButton3.Hide();
             }
         }
-        void AutoSave()
+        void Save()
         {
             string path = Form1.local_user_path + "/Saves.csv";
             if(File.Exists(path))
@@ -132,7 +132,7 @@ namespace HabForms
             else
             {
                 File.Create(path).Close();
-                AutoSave();
+                if (Settings.autosaveIsOn) Save();
             }
         }
 
@@ -153,7 +153,7 @@ namespace HabForms
             else
             {
                 File.Create(path).Close();
-                AutoSave();
+                if (Settings.autosaveIsOn) Save();
             }
         }
 
@@ -194,7 +194,12 @@ namespace HabForms
 
         private void MainQuestForm_OnClosing(object sender, EventArgs e)
         {
-            AutoSave();
+            if (Settings.autosaveIsOn) Save();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            Save();
         }
     }
     
