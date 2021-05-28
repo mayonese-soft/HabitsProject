@@ -47,7 +47,8 @@ namespace HabForms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            MainEditorForm mainEditorForm = new MainEditorForm("qst1.txt");
+            mainEditorForm.Show();
         }
 
         private void settingsButton_Click(object sender, EventArgs e)

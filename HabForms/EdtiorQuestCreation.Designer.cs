@@ -68,6 +68,7 @@ namespace HabForms
             this.questCreateButton.TabIndex = 3;
             this.questCreateButton.Text = "Создать";
             this.questCreateButton.UseVisualStyleBackColor = true;
+            this.questCreateButton.Click += new System.EventHandler(this.questCreateButton_Click);
             // 
             // EdtiorQuestCreation
             // 
