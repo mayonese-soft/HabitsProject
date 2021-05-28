@@ -17,7 +17,7 @@ $1Ладно&1
 @/
 
 @4
-!C:\Users\МайоровМА\Source\Repos\HabitsProject\HabForms\Quests\Quest1\BloodMoon.jpg
+!../../Quests/Quest1/BloodMoon.jpg
 #Кровавая луна поднимается
 $1Пойти защищать газон&1
 $2Воспользоваться магией&2
