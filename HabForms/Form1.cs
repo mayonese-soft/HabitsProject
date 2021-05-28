@@ -19,6 +19,7 @@ namespace HabForms
         public Form1()
         {
             InitializeComponent();
+            FindUserDataFile();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -132,11 +133,17 @@ namespace HabForms
             Directory.CreateDirectory(path);
             using (StreamWriter sw = File.CreateText(path + "/Data.csv"))
             {
-                sw.WriteLine("True;");
+                sw.WriteLine(true);
             }
             File.Create(path + "/Saves.csv").Close();
         }
-
+        private void FindUserDataFile()
+        {
+            if (!File.Exists("userData.csv"))
+            {
+                File.Create("userData.csv").Close();
+            }
+        }
         private void labelPassword_Click(object sender, EventArgs e)
         {
 
