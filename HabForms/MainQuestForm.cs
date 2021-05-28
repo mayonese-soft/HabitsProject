@@ -39,6 +39,9 @@ namespace HabForms
             {
                 if (line == "@/")
                 {
+                    if (tempFLink == null || tempFLink == "") tempFLink = tempID;
+                    if (tempSLink == null || tempSLink == "") tempSLink = tempID;
+                    if (tempTLink == null || tempTLink == "") tempTLink = tempID;
                     pages.Add(new Page { pageID = tempID, imageLink = tempImageLink, mainText = tempMainText, fVar = tempFVar, sVar = tempSVar, tVar = tempTVar, fLink = tempFLink, sLink = tempSLink, tLink = tempTLink });
                     tempID = "";
                     tempImageLink = "";
