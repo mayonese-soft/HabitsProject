@@ -18,6 +18,7 @@ namespace HabForms
         {
             InitializeComponent();
             CheckAutosaveIsOn();
+            isAutosaveOn.ForeColor = Color.Black;
             FormClosing += Settings_OnClosing;
         }
 
@@ -40,6 +41,11 @@ namespace HabForms
             {
                 isAutosaveOn.Checked = Convert.ToBoolean(sw.ReadLine());
             }
+        }
+
+        private void isTextWhite_Click(object sender, EventArgs e)
+        {
+            isAutosaveOn.ForeColor = Color.White;
         }
     }
 }
