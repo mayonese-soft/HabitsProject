@@ -83,7 +83,7 @@ namespace HabForms
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listBox1);
             this.Name = "StartQuestMenu";
-            this.Text = "StartQuestMenu";
+            this.Text = "Выбор квеста";
             this.ResumeLayout(false);
             this.PerformLayout();
 

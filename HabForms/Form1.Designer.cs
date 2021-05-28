@@ -103,7 +103,7 @@ namespace HabForms
             this.Controls.Add(this.loginBox);
             this.Controls.Add(this.enterButton);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

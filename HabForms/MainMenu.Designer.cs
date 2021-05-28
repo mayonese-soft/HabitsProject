@@ -85,7 +85,7 @@ namespace HabForms
             this.Controls.Add(this.questsButton);
             this.Controls.Add(this.exitButton);
             this.Name = "MainMenu";
-            this.Text = "MainMenu";
+            this.Text = "Главная";
             this.ResumeLayout(false);
 
         }

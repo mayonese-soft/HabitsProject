@@ -84,7 +84,7 @@ namespace HabForms
             this.Controls.Add(this.isAutosaveOn);
             this.Controls.Add(this.closeButton);
             this.Name = "Settings";
-            this.Text = "Settings";
+            this.Text = "Настройки";
             this.ResumeLayout(false);
             this.PerformLayout();
 

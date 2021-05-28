@@ -146,7 +146,7 @@ namespace HabForms
             this.Controls.Add(this.answerButton1);
             this.Controls.Add(this.mainTextLable);
             this.Name = "MainQuestForm";
-            this.Text = "MainQuestForm";
+            this.Text = "Квест";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

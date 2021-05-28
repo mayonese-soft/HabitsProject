@@ -187,7 +187,7 @@ namespace HabForms
             this.Controls.Add(this.addPicture);
             this.Controls.Add(this.pictureBoxEditor);
             this.Name = "MainEditorForm";
-            this.Text = "MainEditorForm";
+            this.Text = "Редактор квестов";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -80,7 +80,7 @@ namespace HabForms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxQuestName);
             this.Name = "EdtiorQuestCreation";
-            this.Text = "EdtiorQuestCreation";
+            this.Text = "Название квеста";
             this.ResumeLayout(false);
             this.PerformLayout();
 
