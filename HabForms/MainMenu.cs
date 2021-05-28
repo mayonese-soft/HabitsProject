@@ -44,5 +44,12 @@ namespace HabForms
             Hide();
             startQuestMenu.Show();
         }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            Settings settingForm = new Settings();
+            Hide();
+            settingForm.Show();
+        }
     }
 }

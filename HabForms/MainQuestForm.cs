@@ -142,7 +142,7 @@ namespace HabForms
             if (File.Exists(path))
             {
                 var lines = File.ReadAllLines(path).ToList();
-                foreach(var line in lines)
+                foreach (var line in lines)
                 {
                     if (line.StartsWith(QuestName))
                     {
@@ -153,7 +153,7 @@ namespace HabForms
             else
             {
                 File.Create(path).Close();
-                AutoSave();
+                if (Settings.autosaveIsOn == true) AutoSave();
             }
         }
 
@@ -194,7 +194,12 @@ namespace HabForms
 
         private void MainQuestForm_OnClosing(object sender, EventArgs e)
         {
-            AutoSave();
+            if (Settings.autosaveIsOn == true) AutoSave();
+        }
+
+        private void newGameButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
     

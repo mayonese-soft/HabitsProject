@@ -130,7 +130,10 @@ namespace HabForms
         private void CreateDirectory(string path)
         {
             Directory.CreateDirectory(path);
-            File.Create(path + "/Data.csv").Close();
+            using (StreamWriter sw = File.CreateText(path + "/Data.csv"))
+            {
+                sw.WriteLine("True;");
+            }
             File.Create(path + "/Saves.csv").Close();
         }
 
