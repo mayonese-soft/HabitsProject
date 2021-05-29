@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Collections;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace HabForms
 {
@@ -87,6 +88,16 @@ namespace HabForms
                 pictureBox1.Image = null;
             }
             answerButton1.Text = tempPage.fVar;
+            if (tempPage.fVar != "")
+            {
+                answerButton1.Show();
+                answerButton1.Text = tempPage.fVar;
+
+            }
+            else
+            {
+                answerButton1.Hide();
+            }
             if (tempPage.sVar != "")
             {
                 answerButton2.Show();
@@ -167,17 +178,23 @@ namespace HabForms
 
         private void answerButton1_Click(object sender, EventArgs e)
         {
-            UpdatePage(curPage.fLink);
+            Debug.WriteLine(Settings.autosaveIsOn);
+            if (Settings.autosaveIsOn.ToString() == "True") Save();
+            UpdatePage(curPage.fLink);            
         }
 
         private void answerButton2_Click(object sender, EventArgs e)
         {
-            UpdatePage(curPage.sLink);
+            Debug.WriteLine(Settings.autosaveIsOn.ToString());
+            if (Settings.autosaveIsOn.ToString() == "True") Save();
+            UpdatePage(curPage.sLink);            
         }
 
         private void answerButton3_Click(object sender, EventArgs e)
         {
-            UpdatePage(curPage.tLink);
+            Debug.WriteLine(Settings.autosaveIsOn);
+            if (Settings.autosaveIsOn.ToString() == "True") Save();
+            UpdatePage(curPage.tLink);            
         }
 
         private void mainTextLable_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace HabForms
 {    
     public partial class Settings : Form
     {
-        public static bool autosaveIsOn;
+        public static bool autosaveIsOn = true;
         public Settings()
         {
             InitializeComponent();
