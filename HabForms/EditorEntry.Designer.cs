@@ -43,6 +43,7 @@ namespace HabForms
             this.questLoadED.TabIndex = 0;
             this.questLoadED.Text = "Загрузить";
             this.questLoadED.UseVisualStyleBackColor = true;
+            this.questLoadED.Click += new System.EventHandler(this.questLoadED_Click);
             // 
             // questList
             // 
@@ -51,6 +52,7 @@ namespace HabForms
             this.questList.Name = "questList";
             this.questList.Size = new System.Drawing.Size(120, 95);
             this.questList.TabIndex = 2;
+            this.questList.SelectedIndexChanged += new System.EventHandler(this.questList_SelectedIndexChanged);
             // 
             // newQuestED
             // 
@@ -60,6 +62,7 @@ namespace HabForms
             this.newQuestED.TabIndex = 3;
             this.newQuestED.Text = "Новый квест";
             this.newQuestED.UseVisualStyleBackColor = true;
+            this.newQuestED.Click += new System.EventHandler(this.newQuestED_Click);
             // 
             // goBackED
             // 

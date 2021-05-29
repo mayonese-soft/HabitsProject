@@ -73,7 +73,7 @@ namespace HabForms
                 {
                     string path = @"Quests/" + questDirName + "/" + questName + ".txt";
                     MainQuestForm m = new MainQuestForm(path, questName);
-                    m.ShowDialog();
+                    m.Show();
                 }
                 else MessageBox.Show("К сожалению, тут нет квеста...");
             }

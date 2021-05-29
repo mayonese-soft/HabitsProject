@@ -20,7 +20,17 @@ namespace HabForms
 
         private void questCreateButton_Click(object sender, EventArgs e)
         {
-            File.Create(@"../../Quests/" + textBoxQuestName.Text + ".txt").Close();
+            if (textBoxQuestName.Text != "" || textBoxQuestName.Text != null)
+            {
+                File.Create(@"Quests/" + textBoxQuestName.Text + ".txt").Close();
+                Close();
+            }
+            else MessageBox.Show("Введите название квеста!");
+        }
+
+        private void quitButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -59,6 +59,7 @@ namespace HabForms
             this.quitButton.TabIndex = 2;
             this.quitButton.Text = "Закрыть";
             this.quitButton.UseVisualStyleBackColor = true;
+            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
             // questCreateButton
             // 
