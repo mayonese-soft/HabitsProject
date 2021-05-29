@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
+
 namespace HabForms
 {
     
@@ -20,9 +22,10 @@ namespace HabForms
 
         private void questCreateButton_Click(object sender, EventArgs e)
         {
-            if (textBoxQuestName.Text != "" || textBoxQuestName.Text != null)
+            Regex r = new Regex("[A-zА-я0-9]{1,}");
+            if (r.IsMatch(textBoxQuestName.Text))
             {
-                File.Create(@"Quests/" + textBoxQuestName.Text + ".txt").Close();
+                File.Create(@"Quests/" + r.Match(textBoxQuestName.Text) + ".txt").Close();
                 Close();
             }
             else MessageBox.Show("Введите название квеста!");
